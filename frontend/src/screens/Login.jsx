@@ -42,7 +42,7 @@ const Login = () => {
           setloading(false);
           seterror(null);
           localStorage.setItem("userData", JSON.stringify(res.data));
-          navigate("/data");
+          navigate("/");
         });
     } catch (err) {
       setloading(false);
@@ -105,13 +105,13 @@ const Login = () => {
                 Create a nwe account?
                 <NavLink
                   as={Link}
-                  to={"/singup"}
+                  to={"/signup"}
                   style={inlineStyle}
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                   className="ms-2"
                 >
-                  Signup
+                  Sign up
                 </NavLink>
               </p>
             </Card.Footer>

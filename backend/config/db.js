@@ -2,13 +2,16 @@ import mongoose from "mongoose";
 
 const connectdb = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/ToDoApp", {
+    const connection = await mongoose.connect(process.env.MONGO_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log("DB is Connected succesfully");
+    console.log(
+      `DB is Connected successfully with host ${connection.connection.host}`
+    );
   } catch (error) {
-    console.error(`Some error occur ${error}`);
+    console.error(`Some error occur ${error?.message || error}`);
+    process.exit(1);
   }
 };
 

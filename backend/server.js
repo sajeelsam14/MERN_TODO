@@ -1,16 +1,21 @@
 import express from "express";
+import http from "http";
+import dotenv from "dotenv";
+
 import Dataroute from "./router/data.router.js";
 import authroutes from "./router/auth.router.js";
 import connectdb from "./config/db.js";
 
+dotenv.config();
 connectdb();
 
-const server = express();
-server.use(express.json());
+const app = express();
+app.use(express.json());
 
-server.use("/data", Dataroute);
-server.use("/", authroutes);
+app.use("/data", Dataroute);
+app.use("/", authroutes);
 
+const server = http.createServer(app);
 server.listen(5000, () => {
   console.info("Server is running at port 5000");
 });

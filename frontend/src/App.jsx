@@ -7,7 +7,7 @@ import New from "./screens/New";
 import Login from "./screens/Login";
 import Singup from "./screens/Singup";
 const App = () => {
-  let loginPath = localStorage.getItem("userData")? <Home />: <Login />;
+  let loginPath = localStorage.getItem("userData") ? <Home /> : <Login />;
   return (
     <>
       <main className="app-main">
