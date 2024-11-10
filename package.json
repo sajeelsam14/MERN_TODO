@@ -1,0 +1,21 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Simple To Do list",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sajeel",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.4",
+    "nodemon": "^3.0.1"
+  }
+}
