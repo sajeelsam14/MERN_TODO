@@ -1,4 +1,9 @@
+# node_modules
 node_modules/
 frontEnd/node_modules/
+extension/node_modules/
 
+# build folder
+frontEnd/build/
+# enviorment variables file
 .env
